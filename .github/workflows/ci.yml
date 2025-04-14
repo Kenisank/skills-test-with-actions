@@ -33,3 +33,10 @@ jobs:
           npx remark . --use remark-preset-lint-consistent --frail
      
      
+      - name: Check if debug logging is enabled
+        run: |
+          if [ "$ACTIONS_RUNNER_DEBUG" = "true" ] || [ "$ACTIONS_STEP_DEBUG" = "true" ]; then
+            echo "Debug logging is enabled."
+          else
+            echo "Debug logging is not enabled."
+          fi
