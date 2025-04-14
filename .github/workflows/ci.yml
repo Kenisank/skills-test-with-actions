@@ -40,3 +40,12 @@ jobs:
           else
             echo "Debug logging is not enabled."
           fi
+
+
+
+      - name: Check if debug logging is enabled
+        if: always()
+        run: |
+          echo "ACTIONS_RUNNER_DEBUG: $ACTIONS_RUNNER_DEBUG"
+          echo "ACTIONS_STEP_DEBUG: $ACTIONS_STEP_DEBUG"
+
